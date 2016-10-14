@@ -13,7 +13,7 @@ function receiveUserInfo(json) {
 export function getUserInfo() {
   return dispatch => {
     XHR({
-      url:'/entapi/auth/getEntName',
+      url:'',
       method: "get",
       success: (data) => {
         dispatch(receiveUserInfo(data))
