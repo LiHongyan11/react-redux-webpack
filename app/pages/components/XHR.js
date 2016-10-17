@@ -29,11 +29,6 @@ const XHR = function(conf={}) {
       const msg = res && res.body && res.body.msg
       if (index >= 0) {
         // 手机端提示
-        dd.device.notification.alert({
-          message: msg || '服务器错误',
-          title: '订餐',
-          buttonName: '知道了'
-        })
       } else {
         globalErrorHandler && globalErrorHandler( msg || '服务器错误', '请稍后重试');
       }
@@ -45,7 +40,7 @@ const XHR = function(conf={}) {
   };
   
   let token = localStorage.token;
-  globalLoadingHandler && globalLoadingHandler('从容工作，美食加码');
+  globalLoadingHandler && globalLoadingHandler('');
   if (method === 'get') {
     request[method](api)
       .set("Authorization",token)
